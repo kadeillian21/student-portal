@@ -1,9 +1,8 @@
 import { useState, useEffect } from "react";
-// import { Navbar } from "./Navbar";
+import { Navbar } from "./Navbar";
 import { Modal } from "./Modal";
 import { Login } from "./Login";
 import { Update } from "./Update";
-
 
 export function View() {
   const [isUpdateStudentVisible, setIsUpdateStudentVisible] = useState(false);
