@@ -1,9 +1,8 @@
 import { useState, useEffect } from "react";
-// import { Navbar } from "./Navbar";
+import { Navbar } from "./Navbar";
 import { Modal } from "./Modal";
 import { Login } from "./Login";
 import { Update } from "./Update";
-
 
 export function View() {
   const [isUpdateStudentVisible, setIsUpdateStudentVisible] = useState(false);
@@ -17,9 +16,9 @@ export function View() {
   };
   return (
     <div>
-      <Navbar />
+      <Navbar onSelectUpdateStudent={handleShowStudentUpdate} />
       <Login />
-      <div className="index" onSelectUpdate={handleShowStudentUpdate}>
+      <div className="index">
         <h1> First Name </h1>
         <h1> Last Name</h1>
         <h3> Email</h3>
