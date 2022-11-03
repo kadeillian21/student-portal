@@ -51,8 +51,9 @@ export function View() {
   ];
   return (
     <div>
-      <Navbar />
+      <Navbar onSelectUpdateStudent={handleShowStudentUpdate} />
       <Login />
+      
       <div className="index" onSelectUpdate={handleShowStudentUpdate}>
         {resume.map((test) => (
           <div key={resume.id}>
