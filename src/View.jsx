@@ -1,14 +1,23 @@
 import { useState, useEffect } from "react";
 // import { Navbar } from "./Navbar";
-// import { Update } from "./Update";
 import { Modal } from "./Modal";
 import { Login } from "./Login";
+import { Update } from "./Update";
 
 export function View() {
+  const [isUpdateStudentVisible, setIsUpdateStudentVisible] = useState(false);
+
+  const handleShowStudentUpdate = () => {
+    setIsUpdateStudentVisible(true);
+  };
+
+  const handleHideShowStudentUpdate = () => {
+    setIsUpdateStudentVisible(false);
+  };
   return (
     <div>
       <Login />
-      <div className="index">
+      <div className="index" onSelectUpdate={handleShowStudentUpdate}>
         <h1> First Name </h1>
         <h1> Last Name</h1>
         <h3> Email</h3>
@@ -40,6 +49,9 @@ export function View() {
         <p> URL </p>
         <p> screenshot</p>
       </div>
+      <Modal show={isUpdateStudentVisible} onClose={handleHideShowStudentUpdate}>
+        <Update />
+      </Modal>
     </div>
   );
 }
