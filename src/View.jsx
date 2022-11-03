@@ -4,6 +4,7 @@ import { Modal } from "./Modal";
 import { Login } from "./Login";
 import { Update } from "./Update";
 
+
 export function View() {
   const [isUpdateStudentVisible, setIsUpdateStudentVisible] = useState(false);
 
@@ -16,6 +17,7 @@ export function View() {
   };
   return (
     <div>
+      <Navbar />
       <Login />
       <div className="index" onSelectUpdate={handleShowStudentUpdate}>
         <h1> First Name </h1>
