@@ -12,7 +12,7 @@ export function Login() {
 
     axios
       .post("http://localhost:3000/sessions.json", params)
-      .response((response) => {
+      .then((response) => {
         console.log(response.data);
         axios.defaults.headers.common["Authorization"] =
           "Bearer " + response.data.jwt;
@@ -28,11 +28,14 @@ export function Login() {
   return (
     <div>
       <form onSubmit={handleLogin}>
+        <h4>Login</h4>
         <div>Email</div>
         <input type="email" name="email" />
         <div>Password</div>
         <input type="password" name="password" />
-        <button type="submit">Submit</button>
+        <div>
+          <button type="submit">Submit</button>
+        </div>
       </form>
     </div>
   );
