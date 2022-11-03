@@ -16,9 +16,9 @@ export function View() {
   };
   return (
     <div>
-      <Navbar />
+      <Navbar onSelectUpdateStudent={handleShowStudentUpdate} />
       <Login />
-      <div className="index" onSelectUpdate={handleShowStudentUpdate}>
+      <div className="index">
         <h1> First Name </h1>
         <h1> Last Name</h1>
         <h3> Email</h3>
