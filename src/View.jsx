@@ -2,12 +2,12 @@ import { useState, useEffect } from "react";
 // import { Navbar } from "./Navbar";
 // import { Update } from "./Update";
 import { Modal } from "./Modal";
-// import { Login } from "./Login";
+import { Login } from "./Login";
 
 export function View() {
   return (
     <div>
-      {/* <Login /> */}
+      <Login />
       <div className="index">
         <h1> First Name </h1>
         <h1> Last Name</h1>
