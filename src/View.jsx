@@ -17,7 +17,6 @@ export function View() {
   return (
     <div>
       <Navbar onSelectUpdateStudent={handleShowStudentUpdate} />
-      {/* <Login /> */}
       <div className="index">
         <h1> First Name </h1>
         <h1> Last Name</h1>
