@@ -56,35 +56,37 @@ export function View() {
       <div className="index" onSelectUpdate={handleShowStudentUpdate}>
         {resume.map((test) => (
           <div key={resume.id}>
-            <h1> {test.first_name} </h1>
-            <h1> {test.last_name}</h1>
-            <h3> {test.email}</h3>
-            <p> {test.phone_number}</p>
-            <p> {test.short_bio}</p>
-            <p> {test.linkedin_url}</p>
-            <p> {test.twitter_handle}</p>
-            <p> {test.personal_blog}</p>
-            <p> {test.online_resume}</p>
-            <p> {test.github_url}</p>
-            <p> {test.photo_url}</p>
-            <h4> {test.expirience} </h4>
-            <p> {test.start_date} </p>
-            <p> {test.end_date}</p>
-            <p> {test.job_title}</p>
-            <p> {test.company_name}</p>
-            <p> {test.deatils}</p>
-            <p> {test.education} </p>
-            <p> {test.education_start_date}</p>
-            <p> {test.education_end_date}</p>
-            <p> {test.degree}</p>
-            <p> {test.university_name}</p>
-            <p> {test.education_details}</p>
-            <p> {test.skills}</p>
-            <p> {test.skill_name}</p>
-            <p> {test.capstone_name}</p>
-            <p> {test.description}</p>
-            <p> {test.capstone_url}</p>
-            <p> {test.screenshot}</p>
+            <div className="bg-secondary text-light mt-5">
+              <h1> {test.first_name} </h1>
+              <h1> {test.last_name}</h1>
+              <h3> {test.email}</h3>
+              <p> {test.phone_number}</p>
+              <p> {test.short_bio}</p>
+              <p> {test.linkedin_url}</p>
+              <p> {test.twitter_handle}</p>
+              <p> {test.personal_blog}</p>
+              <p> {test.online_resume}</p>
+              <p> {test.github_url}</p>
+              <p> {test.photo_url}</p>
+              <h4> {test.expirience} </h4>
+              <p> {test.start_date} </p>
+              <p> {test.end_date}</p>
+              <p> {test.job_title}</p>
+              <p> {test.company_name}</p>
+              <p> {test.deatils}</p>
+              <p> {test.education} </p>
+              <p> {test.education_start_date}</p>
+              <p> {test.education_end_date}</p>
+              <p> {test.degree}</p>
+              <p> {test.university_name}</p>
+              <p> {test.education_details}</p>
+              <p> {test.skills}</p>
+              <p> {test.skill_name}</p>
+              <p> {test.capstone_name}</p>
+              <p> {test.description}</p>
+              <p> {test.capstone_url}</p>
+              <p> {test.screenshot}</p>
+            </div>
           </div>
         ))}
         ;
