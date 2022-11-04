@@ -5,11 +5,11 @@ export function Logout() {
     event.preventDefault();
     delete axios.defaults.headers.common["Authorization"];
     localStorage.removeItem("jwt");
-    //window.location.href = "/";
+    window.location.href = "http://localhost:5173";
   };
 
   return (
-    <a href="#" onClick={handleLogout}>
+    <a className="btn btn-light me-3" href="#" onClick={handleLogout}>
       Logout
     </a>
   );

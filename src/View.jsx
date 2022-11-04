@@ -19,10 +19,12 @@ export function View() {
   };
 
   const handleStudentShow = (id) => {
-    axios.get("http://localhost:3000/students/" + id + ".json").then((response) => {
-      const studentInfo = response.data;
-      setCurrentStudent(studentInfo);
-    });
+    axios
+      .get("http://localhost:3000/students/" + id + ".json")
+      .then((response) => {
+        const studentInfo = response.data;
+        setCurrentStudent(studentInfo);
+      });
   };
   const resume = [
     {
@@ -65,43 +67,45 @@ export function View() {
       <div className="index" onSelectUpdate={handleShowStudentUpdate}>
         {resume.map((test) => (
           <div key={resume.id}>
-            <h1>
-              {" "}
-              {test.first_name} {test.last_name}
-            </h1>
-            <h3> {test.email}</h3>
-            <p> Number: {test.phone_number}</p>
-            <p> About me: {test.short_bio}</p>
-            <a href={test.linkedin_url}>Linkedin</a>
-            <p> My Twitter handle: {test.twitter_handle}</p>
-            <a href={test.personal_blog}>My Blog</a>
-            <div>
-              <a href={test.resume_url}> Resume </a>
+            <div className="bg-secondary mt-5">
+              <h1>
+                {" "}
+                {test.first_name} {test.last_name}
+              </h1>
+              <h3> {test.email}</h3>
+              <p> Number: {test.phone_number}</p>
+              <p> About me: {test.short_bio}</p>
+              <a href={test.linkedin_url}>Linkedin</a>
+              <p> My Twitter handle: {test.twitter_handle}</p>
+              <a href={test.personal_blog}>My Blog</a>
+              <div>
+                <a href={test.resume_url}> Resume </a>
+              </div>
+              <a href={test.github_url}>Github</a>
+              <div>
+                <img src={test.photo_url} alt="Your Profile Pic" />
+              </div>
+              <body> {test.experience} </body>
+              <p>
+                {" "}
+                Time: {test.start_date} - {test.end_date}{" "}
+              </p>
+              <p> {test.job_title}</p>
+              <p> {test.company_name}</p>
+              <p> {test.deatils}</p>
+              <p> {test.education} </p>
+              <p> {test.education_start_date}</p>
+              <p> {test.education_end_date}</p>
+              <p> {test.degree}</p>
+              <p> {test.university_name}</p>
+              <p> {test.education_details}</p>
+              <p> {test.skills}</p>
+              <p> {test.skill_name}</p>
+              <p> {test.capstone_name}</p>
+              <p> {test.description}</p>
+              <p> {test.capstone_url}</p>
+              <p> {test.screenshot}</p>
             </div>
-            <a href={test.github_url}>Github</a>
-            <div>
-              <img src={test.photo_url} alt="Your Profile Pic" />
-            </div>
-            <body> {test.experience} </body>
-            <p>
-              {" "}
-              Time: {test.start_date} - {test.end_date}{" "}
-            </p>
-            <p> {test.job_title}</p>
-            <p> {test.company_name}</p>
-            <p> {test.deatils}</p>
-            <p> {test.education} </p>
-            <p> {test.education_start_date}</p>
-            <p> {test.education_end_date}</p>
-            <p> {test.degree}</p>
-            <p> {test.university_name}</p>
-            <p> {test.education_details}</p>
-            <p> {test.skills}</p>
-            <p> {test.skill_name}</p>
-            <p> {test.capstone_name}</p>
-            <p> {test.description}</p>
-            <p> {test.capstone_url}</p>
-            <p> {test.screenshot}</p>
           </div>
         ))}
         ;
