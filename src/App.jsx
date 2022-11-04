@@ -6,7 +6,13 @@ import { Login } from "./Login";
 function App() {
   return (
     <div>
-      <View />
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<View />} />
+          <Route path="/login" element={<Login />} />
+        </Routes>
+      </BrowserRouter>
+      {/* <View /> */}
     </div>
   );
 }
