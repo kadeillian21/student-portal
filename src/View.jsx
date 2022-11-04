@@ -52,6 +52,7 @@ export function View() {
   return (
     <div>
       <Navbar onSelectUpdateStudent={handleShowStudentUpdate} />
+
       <Login />
       
       <div className="index" onSelectUpdate={handleShowStudentUpdate}>
@@ -89,8 +90,12 @@ export function View() {
           </div>
         ))}
         ;
+
       </div>
-      <Modal show={isUpdateStudentVisible} onClose={handleHideShowStudentUpdate}>
+      <Modal
+        show={isUpdateStudentVisible}
+        onClose={handleHideShowStudentUpdate}
+      >
         <Update />
       </Modal>
     </div>
