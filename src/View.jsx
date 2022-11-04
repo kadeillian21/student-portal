@@ -89,10 +89,7 @@ export function View() {
         ))}
         ;
       </div>
-      <Modal
-        show={isUpdateStudentVisible}
-        onClose={handleHideShowStudentUpdate}
-      >
+      <Modal show={isUpdateStudentVisible} onClose={handleHideShowStudentUpdate}>
         <Update />
       </Modal>
     </div>
