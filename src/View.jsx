@@ -53,8 +53,6 @@ export function View() {
     <div>
       <Navbar onSelectUpdateStudent={handleShowStudentUpdate} />
 
-      <Login />
-      
       <div className="index" onSelectUpdate={handleShowStudentUpdate}>
         {resume.map((test) => (
           <div key={resume.id}>
@@ -90,7 +88,6 @@ export function View() {
           </div>
         ))}
         ;
-
       </div>
       <Modal
         show={isUpdateStudentVisible}
