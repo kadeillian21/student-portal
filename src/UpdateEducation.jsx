@@ -4,7 +4,9 @@ export function Education(props) {
   const handleEducationSubmit = (event) => {
     event.preventDefault();
     const params = new FormData(event.target);
-    props.onUpdateEducation(props.student.id, params);
+    axios.patch("http://localhost:3000/students/" + 1 + "/education.json", params).then((response) => {
+      const updatedStudent = response.data;
+    });
     event.target.reset();
   };
   return (

@@ -4,7 +4,9 @@ export function Skills(props) {
   const handleSkillsSubmit = (event) => {
     event.preventDefault();
     const params = new FormData(event.target);
-    props.onUpdateSkills(props.student.id, params);
+    axios.patch("http://localhost:3000/students/" + 1 + "/skills.json", params).then((response) => {
+      const updatedStudent = response.data;
+    });
     event.target.reset();
   };
   return (
