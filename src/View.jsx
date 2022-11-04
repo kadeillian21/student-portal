@@ -4,6 +4,7 @@ import { Modal } from "./Modal";
 import { Login } from "./Login";
 import { Update } from "./Update";
 import axios from "axios";
+import { propTypes } from "react-bootstrap/esm/Image";
 
 export function View() {
   const [currentStudent, setCurrentStudent] = useState({});
@@ -106,7 +107,7 @@ export function View() {
         ;
       </div>
       <Modal show={isUpdateStudentVisible} onClose={handleHideShowStudentUpdate}>
-        <Update />
+        <Update student={resume[0]} />
       </Modal>
     </div>
   );

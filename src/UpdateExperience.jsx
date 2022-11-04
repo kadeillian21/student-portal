@@ -4,7 +4,9 @@ export function Experience(props) {
   const handleExperienceSubmit = (event) => {
     event.preventDefault();
     const params = new FormData(event.target);
-    props.onUpdateExperience(props.experience.id, params);
+    axios.patch("http://localhost:3000/students/" + 1 + "/experience.json", params).then((response) => {
+      const updatedStudent = response.data;
+    });
     event.target.reset();
   };
   return (

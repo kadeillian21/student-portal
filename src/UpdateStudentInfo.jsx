@@ -4,7 +4,7 @@ export function UpdateStudentInfo(props) {
   const handleStudentInfoSubmit = (event) => {
     event.preventDefault();
     const params = new FormData(event.target);
-    axios.patch("http://localhost:3000/students/" + 1 + ".json", params).then((response) => {
+    axios.patch("http://localhost:3000/students/1.json", params).then((response) => {
       const updatedStudent = response.data;
     });
     event.target.reset();
