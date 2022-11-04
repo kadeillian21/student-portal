@@ -3,8 +3,10 @@ import { Navbar } from "./Navbar";
 import { Modal } from "./Modal";
 import { Login } from "./Login";
 import { Update } from "./Update";
+import axios from "axios";
 
 export function View() {
+  const [currentStudent, setCurrentStudent] = useState({});
   const [isUpdateStudentVisible, setIsUpdateStudentVisible] = useState(false);
 
   const handleShowStudentUpdate = () => {
@@ -15,28 +17,34 @@ export function View() {
     setIsUpdateStudentVisible(false);
   };
 
+  const handleStudentShow = (id) => {
+    axios.get("http://localhost:3000/students/" + id + ".json").then((response) => {
+      const studentInfo = response.data;
+      setCurrentStudent(studentInfo);
+    });
+  };
   const resume = [
     {
       id: 1,
-      first_name: "First Name",
-      last_name: "Last Name",
-      email: "Email",
-      phone_number: "Phone Number",
-      short_bio: "Short Bio",
-      linkedin_url: "Linkedn Url",
-      twitter_handle: "Twitter Handle",
-      personal_blog: "personal blog",
-      online_resume: "Online Reseme Url",
-      github_url: "Github url",
-      photo_url: "photo url",
-      expirience: "expirience ",
-      start_date: "stard",
-      end_date: "end date",
-      job_title: "job title",
-      company_name: "company name",
-      deatils: "details",
-      education: "education",
-      education_start_date: "start date",
+      first_name: "Bob",
+      last_name: "Burgers",
+      email: "bob@test.com",
+      phone_number: "1234567890",
+      short_bio: "This is a great bio so please hire me :).",
+      linkedin_url: "http://linkedin.test/bestuser",
+      twitter_handle: "bobsome",
+      personal_blog: "bobblog.test",
+      resume_url: "bobresume.test",
+      github_url: "bobgithub.test",
+      photo_url: "bob.jpeg",
+      experience: "experience",
+      start_date: "10/22/2000",
+      end_date: "6/2/2007",
+      job_title: "Software Engineer",
+      company_name: "Microsoft",
+      deatils: "junior developer",
+      education: "Harvard Univesity",
+      education_start_date: "",
       education_end_date: " end date ",
       degree: "degress",
       university_name: "university name",
@@ -56,20 +64,28 @@ export function View() {
       <div className="index" onSelectUpdate={handleShowStudentUpdate}>
         {resume.map((test) => (
           <div key={resume.id}>
-            <h1> {test.first_name} </h1>
-            <h1> {test.last_name}</h1>
+            <h1>
+              {" "}
+              {test.first_name} {test.last_name}
+            </h1>
             <h3> {test.email}</h3>
-            <p> {test.phone_number}</p>
-            <p> {test.short_bio}</p>
-            <p> {test.linkedin_url}</p>
-            <p> {test.twitter_handle}</p>
-            <p> {test.personal_blog}</p>
-            <p> {test.online_resume}</p>
-            <p> {test.github_url}</p>
-            <p> {test.photo_url}</p>
-            <h4> {test.expirience} </h4>
-            <p> {test.start_date} </p>
-            <p> {test.end_date}</p>
+            <p> Number: {test.phone_number}</p>
+            <p> About me: {test.short_bio}</p>
+            <a href={test.linkedin_url}>Linkedin</a>
+            <p> My Twitter handle: {test.twitter_handle}</p>
+            <a href={test.personal_blog}>My Blog</a>
+            <div>
+              <a href={test.resume_url}> Resume </a>
+            </div>
+            <a href={test.github_url}>Github</a>
+            <div>
+              <img src={test.photo_url} alt="Your Profile Pic" />
+            </div>
+            <body> {test.experience} </body>
+            <p>
+              {" "}
+              Time: {test.start_date} - {test.end_date}{" "}
+            </p>
             <p> {test.job_title}</p>
             <p> {test.company_name}</p>
             <p> {test.deatils}</p>
@@ -89,10 +105,7 @@ export function View() {
         ))}
         ;
       </div>
-      <Modal
-        show={isUpdateStudentVisible}
-        onClose={handleHideShowStudentUpdate}
-      >
+      <Modal show={isUpdateStudentVisible} onClose={handleHideShowStudentUpdate}>
         <Update />
       </Modal>
     </div>
