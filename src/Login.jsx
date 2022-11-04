@@ -1,4 +1,5 @@
 import axios from "axios";
+import { Navbar } from "./Navbar";
 
 const jwt = localStorage.getItem("jwt");
 if (jwt) {
@@ -18,7 +19,7 @@ export function Login() {
           "Bearer " + response.data.jwt;
         localStorage.setItem("jwt", response.data.jwt);
         event.target.reset();
-        // window.location.href = "/"; REDIRECT?
+        window.location.href = "/";
       })
       .catch((error) => {
         console.log(error.response.data.errors);
@@ -27,16 +28,19 @@ export function Login() {
 
   return (
     <div>
-      <form onSubmit={handleLogin}>
-        <h4>Login</h4>
-        <div>Email</div>
-        <input type="email" name="email" />
-        <div>Password</div>
-        <input type="password" name="password" />
-        <div>
-          <button type="submit">Submit</button>
-        </div>
-      </form>
+      <Navbar />
+      <div className="bg-dark login-height">
+        <form onSubmit={handleLogin}>
+          <h4 className="mt-5 pt-5 pb-5">Login</h4>
+          <div>Email</div>
+          <input type="email" name="email" />
+          <div>Password</div>
+          <input className="mb-3" type="password" name="password" />
+          <div>
+            <button type="submit">Submit</button>
+          </div>
+        </form>
+      </div>
     </div>
   );
 }
